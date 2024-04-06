@@ -30,6 +30,10 @@ export class PostListComponent implements OnInit, OnDestroy {
       });
   } // This is a lifecycle hook that runs after the constructor
 
+  onDelete(postId: string) {
+    this.postsService.deletePost(postId);
+  }
+
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
